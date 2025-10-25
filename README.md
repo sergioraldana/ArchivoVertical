@@ -1,61 +1,271 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ArchivoVertical
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Version](https://img.shields.io/badge/version-0.2.0-blue.svg)
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red.svg)
+![Filament](https://img.shields.io/badge/Filament-4.x-orange.svg)
+![PHP](https://img.shields.io/badge/PHP-8.3-purple.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## About Laravel
+Sistema de gestión de archivo vertical construido con Laravel 12 y Filament PHP v4.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📋 Tabla de Contenidos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [Características](#-características)
+- [Requisitos](#-requisitos)
+- [Instalación](#-instalación)
+- [Stack Tecnológico](#-stack-tecnológico)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Desarrollo](#-desarrollo)
+- [Testing](#-testing)
+- [Versionado](#-versionado)
+- [Changelog](#-changelog)
+- [Licencia](#-licencia)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## ✨ Características
 
-## Learning Laravel
+- 🎨 **Panel de Administración** con Filament PHP v4
+- 🔐 **Autenticación y Autorización** con Laravel
+- 📊 **Tablas Interactivas** con filtros y búsqueda
+- 📝 **Formularios Dinámicos** para gestión de datos
+- 🤖 **Integración con IA** mediante Laravel Boost y MCP
+- 🎯 **Testing Automatizado** con Pest v4
+- 🎨 **Diseño Moderno** con Tailwind CSS v4
+- ⚡ **Componentes Reactivos** con Livewire v3
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🔧 Requisitos
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 8.3 o superior
+- Composer 2.x
+- Node.js 18.x o superior
+- MySQL 8.0 o PostgreSQL 13+
+- Git
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📦 Instalación
 
-## Laravel Sponsors
+### 1. Clonar el repositorio
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git clone https://github.com/sergioraldana/ArchivoVertical.git
+cd ArchivoVertical
+```
 
-### Premium Partners
+### 2. Instalar dependencias
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+composer install
+npm install
+```
 
-## Contributing
+### 3. Configurar el entorno
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-## Code of Conduct
+Edita `.env` con tus credenciales de base de datos.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4. Ejecutar migraciones
 
-## Security Vulnerabilities
+```bash
+php artisan migrate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Crear usuario administrador de Filament
 
-## License
+```bash
+php artisan make:filament-user
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Compilar assets
+
+```bash
+npm run build
+# o para desarrollo
+npm run dev
+```
+
+### 7. Iniciar el servidor
+
+```bash
+php artisan serve
+```
+
+Accede a:
+- **Aplicación**: http://localhost:8000
+- **Panel Admin**: http://localhost:8000/admin
+
+## 🛠️ Stack Tecnológico
+
+### Backend
+- **[Laravel 12](https://laravel.com)** - Framework PHP
+- **[Filament PHP v4](https://filamentphp.com)** - Panel de administración
+- **[Livewire v3](https://livewire.laravel.com)** - Componentes dinámicos
+- **[Laravel Boost](https://boost.laravel.com)** - Integración con IA
+
+### Frontend
+- **[Tailwind CSS v4](https://tailwindcss.com)** - Framework CSS
+- **[Alpine.js](https://alpinejs.dev)** - Framework JavaScript reactivo
+
+### Testing
+- **[Pest v4](https://pestphp.com)** - Framework de testing
+- **[PHPUnit v12](https://phpunit.de)** - Unit testing
+
+### Herramientas de Desarrollo
+- **[Laravel Pint](https://laravel.com/docs/pint)** - Formateador de código PHP
+- **[Laravel Sail](https://laravel.com/docs/sail)** - Entorno de desarrollo Docker
+
+## 📁 Estructura del Proyecto
+
+```
+ArchivoVertical/
+├── app/
+│   ├── Filament/            # Recursos y configuración de Filament
+│   │   └── Resources/       # Recursos CRUD
+│   ├── Http/
+│   ├── Models/
+│   └── Providers/
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── views/
+│   └── css/
+├── tests/
+│   ├── Feature/
+│   └── Unit/
+├── .cursor/                 # Configuración de IA y MCP
+│   ├── mcp.json
+│   └── rules/
+├── CHANGELOG.md             # Historial de cambios
+├── VERSIONING.md            # Guía de versionado
+└── VERSION                  # Versión actual
+```
+
+## 💻 Desarrollo
+
+### Comandos útiles
+
+```bash
+# Iniciar servidor de desarrollo
+composer run dev
+
+# Ejecutar tests
+php artisan test
+
+# Formatear código
+vendor/bin/pint
+
+# Limpiar caché
+php artisan optimize:clear
+
+# Ver rutas disponibles
+php artisan route:list
+
+# Ver comandos de Filament
+php artisan list filament
+```
+
+### Crear recursos de Filament
+
+```bash
+# Crear un recurso completo
+php artisan make:filament-resource NombreModelo --generate
+
+# Crear un recurso personalizado
+php artisan make:filament-resource NombreModelo
+```
+
+### Testing
+
+```bash
+# Ejecutar todos los tests
+php artisan test
+
+# Ejecutar tests específicos
+php artisan test --filter=NombreTest
+
+# Con cobertura
+php artisan test --coverage
+```
+
+## 🧪 Testing
+
+Este proyecto usa **Pest v4** para testing. Los tests se encuentran en:
+
+- `tests/Feature/` - Tests de funcionalidades completas
+- `tests/Unit/` - Tests unitarios de componentes individuales
+- `tests/Browser/` - Tests de navegador (Pest v4)
+
+```bash
+# Ejecutar todos los tests
+php artisan test
+
+# Ejecutar solo tests de unidad
+php artisan test --testsuite=Unit
+
+# Ejecutar con reporte detallado
+php artisan test --parallel
+```
+
+## 📝 Versionado
+
+Este proyecto sigue [Semantic Versioning 2.0.0](https://semver.org/lang/es/).
+
+**Versión actual**: `0.2.0`
+
+Para más detalles sobre el proceso de versionado, consulta [VERSIONING.md](VERSIONING.md).
+
+### Formato de versión
+
+- **MAJOR.MINOR.PATCH** (ej: 1.2.3)
+- **MAJOR**: Cambios incompatibles con versiones anteriores
+- **MINOR**: Nueva funcionalidad compatible
+- **PATCH**: Correcciones de errores
+
+## 📋 Changelog
+
+Todos los cambios notables están documentados en [CHANGELOG.md](CHANGELOG.md).
+
+### Versiones recientes
+
+- **[0.2.0]** (2025-10-25) - Filament v4 y Laravel Boost
+- **[0.1.0]** (2025-10-25) - Configuración inicial del proyecto
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'feat: add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+### Convenciones de commits
+
+Este proyecto usa [Conventional Commits](https://www.conventionalcommits.org/es/):
+
+- `feat:` Nueva funcionalidad
+- `fix:` Corrección de errores
+- `docs:` Cambios en documentación
+- `style:` Formato de código
+- `refactor:` Refactorización
+- `test:` Tests
+- `chore:` Mantenimiento
+
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 🔗 Enlaces
+
+- **Repositorio**: [https://github.com/sergioraldana/ArchivoVertical](https://github.com/sergioraldana/ArchivoVertical)
+- **Issues**: [https://github.com/sergioraldana/ArchivoVertical/issues](https://github.com/sergioraldana/ArchivoVertical/issues)
+- **Laravel Docs**: [https://laravel.com/docs](https://laravel.com/docs)
+- **Filament Docs**: [https://filamentphp.com/docs](https://filamentphp.com/docs)
+
+---
+
+<p align="center">Hecho con ❤️ usando Laravel y Filament PHP</p>
